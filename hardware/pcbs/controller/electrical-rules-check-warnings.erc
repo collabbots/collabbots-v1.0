@@ -1,0 +1,41 @@
+ERC report (2019-06-24 11:52:41 PM, Encoding UTF8 )
+
+***** Sheet /
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(68.58 mm, 77.47 mm): Pin 1 (Power input) of component #PWR03 is not driven (Net 1).
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(185.42 mm, 95.25 mm): Pin 13 (Passive) of component J2 is unconnected.
+ErrType(8): Global label not connected to any other global label
+    @(187.96 mm, 95.25 mm): Global label VIN is not connected to any other global label.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(185.42 mm, 115.57 mm): Pin 5 (Passive) of component J2 is unconnected.
+ErrType(8): Global label not connected to any other global label
+    @(187.96 mm, 115.57 mm): Global label D10-MISO is not connected to any other global label.
+ErrType(8): Global label not connected to any other global label
+    @(187.96 mm, 107.95 mm): Global label D13-Rx is not connected to any other global label.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(185.42 mm, 107.95 mm): Pin 8 (Passive) of component J2 is unconnected.
+ErrType(8): Global label not connected to any other global label
+    @(187.96 mm, 105.41 mm): Global label D14-Tx is not connected to any other global label.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(185.42 mm, 105.41 mm): Pin 9 (Passive) of component J2 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(185.42 mm, 102.87 mm): Pin 10 (Passive) of component J2 is unconnected.
+ErrType(8): Global label not connected to any other global label
+    @(187.96 mm, 102.87 mm): Global label RESET is not connected to any other global label.
+ErrType(8): Global label not connected to any other global label
+    @(165.10 mm, 92.71 mm): Global label AREF is not connected to any other global label.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(167.64 mm, 92.71 mm): Pin 1 (Passive) of component J1 is unconnected.
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(168.91 mm, 35.56 mm): Pin 1 (Power input) of component 5V-Regulator1 is not driven (Net 16).
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(167.64 mm, 95.25 mm): Pin 2 (Passive) of component J1 is unconnected.
+ErrType(8): Global label not connected to any other global label
+    @(165.10 mm, 95.25 mm): Global label A0 is not connected to any other global label.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(104.14 mm, 50.80 mm): Pin 4 (Passive) of component K2 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(41.91 mm, 50.80 mm): Pin 4 (Passive) of component K1 is unconnected.
+
+ ** ERC messages: 18  Errors 0  Warnings 18

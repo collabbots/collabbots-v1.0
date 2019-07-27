@@ -1,0 +1,67 @@
+Info: Processing component “J19:/5D1BA1C7:MountingHole:MountingHole_2.2mm_M2”.
+Info: Processing component “Q3:/5D0CD34E:Package_TO_SOT_THT:TO-92_Inline”.
+Info: Processing component “Q2:/5D0ABB15:Package_TO_SOT_THT:TO-92_Inline”.
+Info: Processing component “Q1:/5D03D092:Package_TO_SOT_THT:TO-92_Inline”.
+Info: Processing component “K2:/5D0CD348:Relay_THT:Relay_SPDT_Omron-G5LE-1”.
+Info: Processing component “K1:/5D09949D:Relay_THT:Relay_SPDT_Omron-G5LE-1”.
+Info: Processing component “J22:/5D17306D:TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type011_RT05502HBWC_1x02_P5.00mm_Horizontal”.
+Info: Processing component “J21:/5D03C864:TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type011_RT05502HBWC_1x02_P5.00mm_Horizontal”.
+Info: Processing component “J20:/5D1C3773:MountingHole:MountingHole_3.2mm_M3”.
+Info: Processing component “Q4:/5D0CD33C:Package_TO_SOT_THT:TO-92_Inline”.
+Info: Processing component “J18:/5D1B0969:MountingHole:MountingHole_2.2mm_M2”.
+Info: Processing component “J17:/5D10BA03:Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical”.
+Info: Processing component “J16:/5D1C1334:MountingHole:MountingHole_3.2mm_M3”.
+Info: Processing component “J15:/5D1B7D51:MountingHole:MountingHole_2.2mm_M2”.
+Info: Processing component “J14:/5D1AE1C4:MountingHole:MountingHole_2.2mm_M2”.
+Info: Processing component “J13:/5D195D9E:TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type011_RT05506HBWC_1x06_P5.00mm_Horizontal”.
+Info: Processing component “J12:/5D16642E:TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type011_RT05504HBWC_1x04_P5.00mm_Horizontal”.
+Info: Processing component “R8:/5D1610A8:Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal”.
+Info: Processing component “SW2:/5D1610C0:Button_Switch_THT:SW_Tactile_Straight_KSL0Axx1LFTR”.
+Info: Processing component “SW1:/5D25172B:Button_Switch_THT:SW_Tactile_Straight_KSL0Axx1LFTR”.
+Info: Processing component “RV4:/5D0DCB00:Potentiometer_THT:Potentiometer_Alps_RK163_Single_Horizontal”.
+Info: Processing component “RV3:/5D0DDD8A:Potentiometer_THT:Potentiometer_Alps_RK163_Single_Horizontal”.
+Info: Processing component “RV2:/5D0DBCBA:Potentiometer_THT:Potentiometer_Alps_RK163_Single_Horizontal”.
+Info: Processing component “RV1:/5D050ABA:Potentiometer_THT:Potentiometer_Alps_RK163_Single_Horizontal”.
+Info: Processing component “R10:/5D12BD6F:Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal”.
+Info: Processing component “R9:/5D135C93:Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal”.
+Info: Processing component “J11:/5D15F505:TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type011_RT05504HBWC_1x04_P5.00mm_Horizontal”.
+Info: Processing component “R7:/5D17BC5B:Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal”.
+Info: Processing component “R6:/5D0CD35A:Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal”.
+Info: Processing component “R5:/5D0CD336:Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal”.
+Info: Processing component “R4:/5D0CD354:Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal”.
+Info: Processing component “R3:/5D0AFA57:Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal”.
+Info: Processing component “R2:/5D03C157:Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal”.
+Info: Processing component “R1:/5D0ACEB4:Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal”.
+Info: Processing component “J10:/5D191D71:TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type011_RT05506HBWC_1x06_P5.00mm_Horizontal”.
+Info: Processing component “C1:/5D0EA149:Capacitor_THT:CP_Radial_D4.0mm_P1.50mm”.
+Info: Processing component “C2:/5D0EABFE:Capacitor_THT:CP_Radial_D4.0mm_P1.50mm”.
+Info: Processing component “C3:/5D1610C6:Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm”.
+Info: Processing component “C4:/5D11BE1B:”.
+Info: Processing component “D1:/5D03DCB9:Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal”.
+Info: Processing component “D2:/5D03B8C7:LED_THT:LED_Rectangular_W3.9mm_H1.8mm_FlatTop”.
+Info: Processing component “D3:/5D0CD342:Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal”.
+Info: Processing component “D4:/5D0CD330:LED_THT:LED_Rectangular_W3.9mm_H1.8mm_FlatTop”.
+Info: Processing component “J1:/5D042CD9:Connector_PinHeader_2.54mm:PinHeader_1x14_P2.54mm_Vertical”.
+Info: Processing component “J2:/5D044DCC:Connector_PinHeader_2.54mm:PinHeader_1x14_P2.54mm_Vertical”.
+Info: Processing component “5V-Regulator1:/5D0E8236:Package_TO_SOT_THT:TO-220F-3_Vertical”.
+Info: Processing component “J9:/5D1BC6B0:MountingHole:MountingHole_3.2mm_M3”.
+Info: Processing component “J8:/5D1B31C7:MountingHole:MountingHole_2.2mm_M2”.
+Info: Processing component “J7:/5D0F0557:MountingHole:MountingHole_2.2mm_M2”.
+Info: Processing component “J6:/5D1F4AF5:Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical”.
+Info: Processing component “J5:/5D1BEE64:MountingHole:MountingHole_3.2mm_M3”.
+Info: Processing component “J4:/5D1B584A:MountingHole:MountingHole_2.2mm_M2”.
+Info: Processing component “J3:/5D0F0551:MountingHole:MountingHole_2.2mm_M2”.
+Reconnect J2 pin 14 from 5V to D6.
+Reconnect J2 pin 1 from D6 to 5V.
+Reconnect J2 pin 2 from D7 to VIN.
+Reconnect J2 pin 3 from D8-MOSI to Vcc.
+Reconnect J2 pin 13 from VIN to D7.
+Reconnect J2 pin 12 from Vcc to D8-MOSI.
+Reconnect J2 pin 11 from GND to D9-SCK.
+Reconnect J2 pin 10 from RESET to D10-MISO.
+Reconnect J2 pin 9 from D14-Tx to D11-SDA.
+Reconnect J2 pin 8 from D13-Rx to D12-SCL.
+Reconnect J2 pin 7 from D12-SCL to D13-Rx.
+Reconnect J2 pin 6 from D11-SDA to D14-Tx.
+Reconnect J2 pin 5 from D10-MISO to RESET.
+Reconnect J2 pin 4 from D9-SCK to GND.
