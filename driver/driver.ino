@@ -306,7 +306,7 @@ void loop()
   // read input
   if (fsm == PROMPT)
   {
-    Serial.println("Enter command in form set (arm1/arm2) (base/bottom/top/claw) (angle/spacing):");
+    Serial.println("Enter command in form: set arm1/arm2 base/bottom/top/claw angle/spacing");
     fsm = READ;
   }
 
@@ -356,6 +356,13 @@ void loop()
   }
 
   else if (fsm == EXECUTE) {
+
+    Serial.print("Setting "); 
+    Serial.print(armToChange); 
+    Serial.print(" "); 
+    Serial.print(motorToChange); 
+    Serial.print(" to "); 
+    Serial.println(amountToChange); 
 
     if (armToChange == "arm1") {
 
