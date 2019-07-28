@@ -99,8 +99,10 @@ void setAngle(int pin, int angle) {
     adjustedAngle = map(angle, 0, 180, MINIMUM_PULSE, MAXIMUM_PULSE);
   else if (pin == base_pin_1 || pin == base_pin_2)
     adjustedAngle = map(angle, 0, 180, 90, 400);
-  else if (pin == bottom_pin_1 || pin == bottom_pin_2)
+  else if (pin == bottom_pin_1)
     adjustedAngle = map(angle, 180, 0, 90, 395);
+  else if (pin == bottom_pin_2)
+    adjustedAngle = map(angle, 0, 180, 90, 395); 
   else if (pin == top_pin_1 || pin == top_pin_2)
     adjustedAngle = map(angle, -135, 135, 90, 540);
   pwm.setPWM(pin, 0, adjustedAngle);
@@ -265,22 +267,22 @@ void setup()
   digitalWrite(3, HIGH);
 
   // CONFIGURE INTERRUPTS
-//  pinMode(armOneInterruptPin1, INPUT);
-//  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin1), arm1Interrupt, RISING);
-//  pinMode(armOneInterruptPin2, INPUT);
-//  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin2), arm1Interrupt, RISING);
-//  pinMode(armOneInterruptPin3, INPUT);
-//  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin3), arm1Interrupt, RISING);
-//  pinMode(armOneInterruptPin4, INPUT);
-//  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin4), arm1Interrupt, RISING);
-//  pinMode(armTwoInterruptPin1, INPUT);
-//  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin1), arm2Interrupt, RISING);
-//  pinMode(armTwoInterruptPin2, INPUT);
-//  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin2), arm2Interrupt, RISING);
-//  pinMode(armTwoInterruptPin3, INPUT);
-//  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin3), arm2Interrupt, RISING);
-//  pinMode(armTwoInterruptPin4, INPUT);
-//  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin4), arm2Interrupt, RISING);
+  pinMode(armOneInterruptPin1, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin1), arm1Interrupt, RISING);
+  pinMode(armOneInterruptPin2, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin2), arm1Interrupt, RISING);
+  pinMode(armOneInterruptPin3, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin3), arm1Interrupt, RISING);
+  pinMode(armOneInterruptPin4, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin4), arm1Interrupt, RISING);
+  pinMode(armTwoInterruptPin1, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin1), arm2Interrupt, RISING);
+  pinMode(armTwoInterruptPin2, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin2), arm2Interrupt, RISING);
+  pinMode(armTwoInterruptPin3, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin3), arm2Interrupt, RISING);
+  pinMode(armTwoInterruptPin4, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin4), arm2Interrupt, RISING);
 
 
   // CONFIGURE STARTING POSITIONS
@@ -290,7 +292,7 @@ void setup()
   pwm.setPWM(base_pin_2, 0, MINIMUM_PULSE);
   delay(500);
   pwm.setPWM(bottom_pin_1, 0, 395);
-  pwm.setPWM(bottom_pin_2, 0, 395);
+  pwm.setPWM(bottom_pin_2, 0, MINIMUM_PULSE);
   delay(500);
   pwm.setPWM(top_pin_1, 0, 315);
   pwm.setPWM(top_pin_2, 0, 315);
@@ -362,7 +364,7 @@ void loop()
     Serial.print(" "); 
     Serial.print(motorToChange); 
     Serial.print(" to "); 
-    Serial.println(amountToChange); 
+    Serial.println(amountToChange);
 
     if (armToChange == "arm1") {
 
