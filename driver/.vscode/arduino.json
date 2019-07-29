@@ -1,5 +1,0 @@
-{
-    "board": "arduino:samd:mkr1000",
-    "sketch": "driver.ino",
-    "port": "/dev/cu.usbmodem14201"
-}
