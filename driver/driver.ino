@@ -2,6 +2,11 @@
 #include <Adafruit_PWMServoDriver.h>
 #include <Servo.h>
 
+// TODO: arm 1/2 relax disconnects power from the arm. activate will switch it back on.
+// TODO: add wifi data transfer of angles for visualization module to work off the system.
+// TODO: add manual control code and construct FSM for the same.
+// TODO: organize code into multiple files.
+
 /********************
    GLOBAL VARIABLES
  ********************/
@@ -18,16 +23,19 @@ uint8_t servonum = 1;
 #define ARM1 1
 #define ARM2 2
 
-// FSM
-enum FSM_State {
-  PROMPT,
-  READ,
-  PARSE,
-  EXECUTE,
-  INTERRUPT1,
-  INTERRUPT2
+// finite system states to implement robot interface as an FSM (Finite State Machine) 
+enum system_state {
+  REQ_INSTRCT,      // request for instruction
+  READ_INSTRCT,     // read instruction
+  PARSE_INSTRCT,    // parse instruction
+  EXECUTE_INSTRCT,  // execute instruction
+  ARM_1_LIMIT_INTRPT, //
+  ARM_2_LIMIT_INTRPT, //
+  MANUAL_CTRL_INTRPT, //
+  ARM_SWITCH_INTRPT   //
 };
-FSM_State fsm = PROMPT;
+
+system_state sys_state = REQ_INSTRCT;
 
 // max/min angles for the different motors
 #define MAX_TOP_ANGLE 135
@@ -241,11 +249,11 @@ void rotateTop(int angle, int arm) {
 }
 
 void arm1Interrupt() {
-  fsm = INTERRUPT1;
+  sys_state = ARM_1_LIMIT_INTRPT;
 }
 
 void arm2Interrupt() {
-  fsm = INTERRUPT2;
+  sys_state = ARM_2_LIMIT_INTRPT;
 }
 
 /******************
@@ -306,22 +314,22 @@ void loop()
 { 
   
   // read input
-  if (fsm == PROMPT)
+  if (sys_state == REQ_INSTRCT)
   {
     Serial.println("Enter command in form: set arm1/arm2 base/bottom/top/claw angle/spacing");
-    fsm = READ;
+    sys_state = READ_INSTRCT;
   }
 
-  else if (fsm == READ) {
+  else if (sys_state == READ_INSTRCT) {
     if (Serial.available() > 0) {
       input = Serial.readStringUntil('\n');
       //go onto to next state
-      fsm = PARSE;
+      sys_state = PARSE_INSTRCT;
     }
 
   }
 
-  else if (fsm == PARSE) {
+  else if (sys_state == PARSE_INSTRCT) {
 
     //find location of spaces
     int firstSpace = -1;
@@ -344,20 +352,20 @@ void loop()
       String amountToChangeString = input.substring(thirdSpace + 1, input.length());
       amountToChange = amountToChangeString.toInt();
 
-      fsm = EXECUTE;
+      sys_state = EXECUTE;
 
     }
 
     else {
 
       Serial.println("Sorry, invalid command");
-      fsm = PROMPT;
+      sys_state = REQ_INSTRCT;
 
     }
 
   }
 
-  else if (fsm == EXECUTE) {
+  else if (sys_state == EXECUTE) {
 
     Serial.print("Setting "); 
     Serial.print(armToChange); 
@@ -398,20 +406,20 @@ void loop()
 
     }
 
-    fsm = PROMPT;
+    sys_state = REQ_INSTRCT;
 
   }
 
-  else if (fsm == INTERRUPT1) {
+  else if (sys_state == ARM_1_LIMIT_INTRPT) {
     rotateBottom(90, ARM1);
     rotateTop(0, ARM1);
-    fsm = PROMPT;
+    sys_state = REQ_INSTRCT;
   }
 
-  else if (fsm == INTERRUPT2) {
+  else if (sys_state == ARM_2_LIMIT_INTRPT) {
     rotateBottom(90, ARM2);
     rotateTop(0, ARM2);
-    fsm = PROMPT;
+    sys_state = REQ_INSTRCT;
   }
 
 }
