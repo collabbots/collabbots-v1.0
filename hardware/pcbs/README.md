@@ -2,7 +2,7 @@
 
 Possible improvements for v2.0/v1.0 Rev B of the pcbs:
 
-1. Reverse voltage protection using power PMOS, [zener, resistor (and LED for indication?)]. **(vv important)**
+1. Reverse voltage protection using power PMOS, [zener, resistor (and LED for indication)]. **(vv important)**
 2. integration of PCA9685 circuit into the pcb itself: reduce form factor and external wiring. **(vv important)**
 3. For the connection portal pcb: the interrupt wires have to currently be all powered through one I-High and GND port. Rather have an array of 3 jumpers: interrupt, power, GND so that it is easier to wire and manage micro/limit switches. **(important)**
 4. Use bigger (appropriately sized) vias -- comparable to the track thickness
@@ -18,3 +18,6 @@ Possible improvements for v2.0/v1.0 Rev B of the pcbs:
 14. Try using SMD components to further reduce the footprint.
 15. Can have LED indicators for all the wires for visual debugging and also. Use the on-board 5V supply for that.
 16. Try redesigning the pcb such that the design is completely modular. Another controller pcb can add two more arms at maximum. Therefore removing RPi from the board and having it has an optional mount is one step towards achieving this. **(vvv important)**
+17. Servo zero set correction circuitry (try adding large capacitors on the output -- make sure to avoid high current surges). **(vv important)**
+18. The connection portal will not be necessary if we handle each robot using a small microcontroller. This will also enable parallel control. So, just a USB cable and power supply goes into the robot -- also reduces wiring tremendously.
+19. There can be a USB interface board that handles distributing serial commands to multiple robots. So, from a single USB port of the RPi/computer, you have a command handler PCB connected to multiple robots through USB ports. This will promote expandibility of the system.
