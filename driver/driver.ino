@@ -45,34 +45,36 @@ system_state sys_state = REQ_INSTRCT;
 #define MIN_BOTTOM_ANGLE 0
 #define MIN_BASE_ANGLE 0
 
-// pins for various parts of arm
-const int base_pin_1 = 0;
-const int bottom_pin_1 = 1;
-const int top_pin_1 = 2;
-const int claw_pin_1 = 3;
-const int base_pin_2 = 5;
-const int bottom_pin_2 = 6;
-const int top_pin_2 = 7;
-const int claw_pin_2 = 8;
-const int armOneInterruptPin1 = 0;
-const int armOneInterruptPin2 = 1;
-const int armOneInterruptPin3 = 4;
-const int armOneInterruptPin4 = 5;
-const int armTwoInterruptPin1 = 6;
-const int armTwoInterruptPin2 = 7;
-const int armTwoInterruptPin3 = 8;
-const int armTwoInterruptPin4 = 9;
+// servo controller (PCA9685) pins for arm motors
+const int arm_1_base_pin = 0;
+const int arm_1_bottom_pin = 1;
+const int arm_1_top_pin = 2;
+const int arm_1_claw_pin = 3;
+const int arm_2_base_pin = 5;
+const int arm_2_bottom_pin = 6;
+const int arm_2_top_pin = 7;
+const int arm_2_claw_pin = 8;
+
+// interrupt pins from the arms to thr MKR1000
+const int arm_1_bot_intrpt_1 = 0;
+const int arm_1_bot_intrpt_2 = 1;
+const int arm_1_top_intrpt_1 = 4;
+const int arm_1_top_intrpt_2 = 5;
+const int arm_2_bot_intrpt_1 = 6;
+const int arm_2_bot_intrpt_2 = 7;
+const int arm_2_top_intrpt_1 = 8;
+const int arm_2_top_intrpt_2 = 9;
 
 // current angular position
-int current_base_angle_1 = 0;
-int current_bottom_angle_1 = 0;
-int current_top_angle_1 = 0;
-int current_base_angle_2 = 0;
-int current_bottom_angle_2 = 0;
-int current_top_angle_2 = 0;
+int arm_1_base_angle = 0;
+int arm_1_bottom_angle = 0;
+int arm_1_top_angle = 0;
+int arm_2_base_angle = 0;
+int arm_2_bottom_angle = 0;
+int arm_2_top_angle = 0;
 
 // speed delay for motors (higher = slower)
-int speed_delay = 25;
+const int motor_speed_delay = 25;
 
 
 /********************
@@ -90,9 +92,9 @@ void setClawSpacing(double spacing, int arm)
     return;
   int angle = -13.386 * spacing + 106.28;
   if (arm == 1)
-    setAngle(claw_pin_1, angle);
+    setAngle(arm_1_claw_pin, angle);
   else if (arm == 2)
-    setAngle(claw_pin_2, angle);
+    setAngle(arm_2_claw_pin, angle);
 }
 
 /**
@@ -100,18 +102,18 @@ void setClawSpacing(double spacing, int arm)
    @param pin The pin
    @param angle
 */
-void setAngle(int pin, int angle) {
-
+void setAngle(int pin, int angle) 
+{
   int adjustedAngle;
-  if (pin == claw_pin_1 || pin == claw_pin_2)
+  if (pin == arm_1_claw_pin || pin == arm_2_claw_pin)
     adjustedAngle = map(angle, 0, 180, MINIMUM_PULSE, MAXIMUM_PULSE);
-  else if (pin == base_pin_1 || pin == base_pin_2)
+  else if (pin == arm_1_base_pin || pin == arm_2_base_pin)
     adjustedAngle = map(angle, 0, 180, 90, 400);
-  else if (pin == bottom_pin_1)
+  else if (pin == arm_1_bottom_pin)
     adjustedAngle = map(angle, 180, 0, 90, 395);
-  else if (pin == bottom_pin_2)
+  else if (pin == arm_2_bottom_pin)
     adjustedAngle = map(angle, 0, 180, 90, 395); 
-  else if (pin == top_pin_1 || pin == top_pin_2)
+  else if (pin == arm_1_top_pin || pin == arm_2_top_pin)
     adjustedAngle = map(angle, -135, 135, 90, 540);
   pwm.setPWM(pin, 0, adjustedAngle);
 
@@ -127,36 +129,46 @@ void rotateBase(int angle, int arm)
   if (angle < MIN_BASE_ANGLE || angle > MAX_BASE_ANGLE)
     return;
 
-  if (arm == 1) {
-    if (angle >= current_base_angle_1) {
-      for (int i = current_base_angle_1; i < angle; ++i) {
-        setAngle(base_pin_1, i);
-        delay(speed_delay);
+  if (arm == 1) 
+  {
+    if (angle >= arm_1_base_angle) 
+    {
+      for (int i = arm_1_base_angle; i < angle; ++i) 
+      {
+        setAngle(arm_1_base_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    else if (angle < current_base_angle_1) {
-      for (int i = current_base_angle_1; i > angle; i--) {
-        setAngle(base_pin_1, i);
-        delay(speed_delay);
+    else if (angle < arm_1_base_angle) 
+    {
+      for (int i = arm_1_base_angle; i > angle; i--) 
+      {
+        setAngle(arm_1_base_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    current_base_angle_1 = angle;
+    arm_1_base_angle = angle;
   }
 
-  else if (arm == 2) {
-    if (angle >= current_base_angle_2) {
-      for (int i = current_base_angle_2; i < angle; i++) {
-        setAngle(base_pin_2, i);
-        delay(speed_delay);
+  else if (arm == 2) 
+  {
+    if (angle >= arm_2_base_angle) 
+    {
+      for (int i = arm_2_base_angle; i < angle; i++) 
+      {
+        setAngle(arm_2_base_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    else if (angle < current_base_angle_2) {
-      for (int i = current_base_angle_2; i > angle; i--) {
-        setAngle(base_pin_2, i);
-        delay(speed_delay);
+    else if (angle < arm_2_base_angle) 
+    {
+      for (int i = arm_2_base_angle; i > angle; i--) 
+      {
+        setAngle(arm_2_base_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    current_base_angle_2 = angle;
+    arm_2_base_angle = angle;
   }
 
 }
@@ -166,41 +178,51 @@ void rotateBase(int angle, int arm)
    @param angle
    @param arm
 */
-void rotateBottom(int angle, int arm) {
-
+void rotateBottom(int angle, int arm) 
+{
   if (angle < MIN_BOTTOM_ANGLE || angle > MAX_BOTTOM_ANGLE)
     return;
 
-  if (arm == 1) {
-    if (angle >= current_bottom_angle_1) {
-      for (int i = current_bottom_angle_1; i < angle; i++) {
-        setAngle(bottom_pin_1, i);
-        delay(speed_delay);
+  if (arm == 1) 
+  {
+    if (angle >= arm_1_bottom_angle) 
+    {
+      for (int i = arm_1_bottom_angle; i < angle; i++) 
+      {
+        setAngle(arm_1_bottom_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    else if (angle < current_bottom_angle_1) {
-      for (int i = current_bottom_angle_1; i > angle; i--) {
-        setAngle(bottom_pin_1, i);
-        delay(speed_delay);
+    else if (angle < arm_1_bottom_angle) 
+    {
+      for (int i = arm_1_bottom_angle; i > angle; i--) 
+      {
+        setAngle(arm_1_bottom_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    current_bottom_angle_1 = angle;
+    arm_1_bottom_angle = angle;
   }
 
-  else if (arm == 2) {
-    if (angle >= current_bottom_angle_2) {
-      for (int i = current_bottom_angle_2; i < angle; i++) {
-        setAngle(bottom_pin_2, i);
-        delay(speed_delay);
+  else if (arm == 2) 
+  {
+    if (angle >= arm_2_bottom_angle) 
+    {
+      for (int i = arm_2_bottom_angle; i < angle; i++) 
+      {
+        setAngle(arm_2_bottom_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    else if (angle < current_bottom_angle_2) {
-      for (int i = current_bottom_angle_2; i > angle; i--) {
-        setAngle(bottom_pin_2, i);
-        delay(speed_delay);
+    else if (angle < arm_2_bottom_angle) 
+    {
+      for (int i = arm_2_bottom_angle; i > angle; i--) 
+      {
+        setAngle(arm_2_bottom_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    current_bottom_angle_2 = angle;
+    arm_2_bottom_angle = angle;
   }
 
 }
@@ -209,50 +231,62 @@ void rotateBottom(int angle, int arm) {
    @param angle
    @para
 */
-void rotateTop(int angle, int arm) {
-
+void rotateTop(int angle, int arm) 
+{
   if (angle < MIN_TOP_ANGLE || angle > MAX_TOP_ANGLE)
     return;
 
-  if (arm == 1) {
-    if (angle >= current_top_angle_1) {
-      for (int i = current_top_angle_1; i < angle; i++) {
-        setAngle(top_pin_1, i);
-        delay(speed_delay);
+  if (arm == 1) 
+  {
+    if (angle >= arm_1_top_angle) 
+    {
+      for (int i = arm_1_top_angle; i < angle; i++) 
+      {
+        setAngle(arm_1_top_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    else if (angle < current_top_angle_1) {
-      for (int i = current_top_angle_1; i > angle; i--) {
-        setAngle(top_pin_1, i);
-        delay(speed_delay);
+    else if (angle < arm_1_top_angle) 
+    {
+      for (int i = arm_1_top_angle; i > angle; i--) 
+      {
+        setAngle(arm_1_top_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    current_top_angle_1 = angle;
+    arm_1_top_angle = angle;
   }
 
-  else if (arm == 2) {
-    if (angle >= current_top_angle_2) {
-      for (int i = current_top_angle_2; i < angle; i++) {
-        setAngle(top_pin_2, i);
-        delay(speed_delay);
+  else if (arm == 2) 
+  {
+    if (angle >= arm_2_top_angle) 
+    {
+      for (int i = arm_2_top_angle; i < angle; i++) 
+      {
+        setAngle(arm_2_top_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    else if (angle < current_top_angle_2) {
-      for (int i = current_top_angle_2; i > angle; i--) {
-        setAngle(top_pin_2, i);
-        delay(speed_delay);
+    else if (angle < arm_2_top_angle) 
+    {
+      for (int i = arm_2_top_angle; i > angle; i--) 
+      {
+        setAngle(arm_2_top_pin, i);
+        delay(motor_speed_delay);
       }
     }
-    current_top_angle_2 = angle;
+    arm_2_top_angle = angle;
   }
 
 }
 
-void arm1Interrupt() {
+void arm1Interrupt() 
+{
   sys_state = ARM_1_LIMIT_INTRPT;
 }
 
-void arm2Interrupt() {
+void arm2Interrupt() 
+{
   sys_state = ARM_2_LIMIT_INTRPT;
 }
 
@@ -275,44 +309,42 @@ void setup()
   digitalWrite(3, HIGH);
 
   // CONFIGURE INTERRUPTS
-  pinMode(armOneInterruptPin1, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin1), arm1Interrupt, RISING);
-  pinMode(armOneInterruptPin2, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin2), arm1Interrupt, RISING);
-  pinMode(armOneInterruptPin3, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin3), arm1Interrupt, RISING);
-  pinMode(armOneInterruptPin4, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(armOneInterruptPin4), arm1Interrupt, RISING);
-  pinMode(armTwoInterruptPin1, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin1), arm2Interrupt, RISING);
-  pinMode(armTwoInterruptPin2, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin2), arm2Interrupt, RISING);
-  pinMode(armTwoInterruptPin3, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin3), arm2Interrupt, RISING);
-  pinMode(armTwoInterruptPin4, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(armTwoInterruptPin4), arm2Interrupt, RISING);
+  pinMode(arm_1_bot_intrpt_1, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(arm_1_bot_intrpt_1), arm1Interrupt, RISING);
+  pinMode(arm_1_bot_intrpt_2, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(arm_1_bot_intrpt_2), arm1Interrupt, RISING);
+  pinMode(arm_1_top_intrpt_1, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(arm_1_top_intrpt_1), arm1Interrupt, RISING);
+  pinMode(arm_1_top_intrpt_2, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(arm_1_top_intrpt_2), arm1Interrupt, RISING);
+  pinMode(arm_2_bot_intrpt_1, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(arm_2_bot_intrpt_1), arm2Interrupt, RISING);
+  pinMode(arm_2_bot_intrpt_2, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(arm_2_bot_intrpt_2), arm2Interrupt, RISING);
+  pinMode(arm_2_top_intrpt_1, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(arm_2_top_intrpt_1), arm2Interrupt, RISING);
+  pinMode(arm_2_top_intrpt_2, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(arm_2_top_intrpt_2), arm2Interrupt, RISING);
 
 
   // CONFIGURE STARTING POSITIONS
   pwm.begin();
   pwm.setPWMFreq(60); // analog servos run at ~60 Hz updates
-  pwm.setPWM(base_pin_1, 0, MINIMUM_PULSE);
-  pwm.setPWM(base_pin_2, 0, MINIMUM_PULSE);
+  pwm.setPWM(arm_1_base_pin, 0, MINIMUM_PULSE);
+  pwm.setPWM(arm_2_base_pin, 0, MINIMUM_PULSE);
   delay(500);
-  pwm.setPWM(bottom_pin_1, 0, 395);
-  pwm.setPWM(bottom_pin_2, 0, MINIMUM_PULSE);
+  pwm.setPWM(arm_1_bottom_pin, 0, 395);
+  pwm.setPWM(arm_2_bottom_pin, 0, MINIMUM_PULSE);
   delay(500);
-  pwm.setPWM(top_pin_1, 0, 315);
-  pwm.setPWM(top_pin_2, 0, 315);
-  pwm.setPWM(claw_pin_1, 0, 160);
-  pwm.setPWM(claw_pin_2, 0, 160);
+  pwm.setPWM(arm_1_top_pin, 0, 315);
+  pwm.setPWM(arm_2_top_pin, 0, 315);
+  pwm.setPWM(arm_1_claw_pin, 0, 160);
+  pwm.setPWM(arm_2_claw_pin, 0, 160);
   delay(500); 
-
 }
 
 void loop()
-{ 
-  
+{   
   // read input
   if (sys_state == REQ_INSTRCT)
   {
@@ -320,8 +352,10 @@ void loop()
     sys_state = READ_INSTRCT;
   }
 
-  else if (sys_state == READ_INSTRCT) {
-    if (Serial.available() > 0) {
+  else if (sys_state == READ_INSTRCT) 
+  {
+    if (Serial.available() > 0) 
+    {
       input = Serial.readStringUntil('\n');
       //go onto to next state
       sys_state = PARSE_INSTRCT;
@@ -329,8 +363,8 @@ void loop()
 
   }
 
-  else if (sys_state == PARSE_INSTRCT) {
-
+  else if (sys_state == PARSE_INSTRCT) 
+  {
     //find location of spaces
     int firstSpace = -1;
     int secondSpace = -1;
@@ -344,29 +378,26 @@ void loop()
         thirdSpace = i;
     }
 
-    if (firstSpace != -1 && secondSpace != -1 && thirdSpace != -1) {
-
+    if (firstSpace != -1 && secondSpace != -1 && thirdSpace != -1) 
+    {
       //break the string apart at the spaces
       armToChange = input.substring(firstSpace + 1, secondSpace);
       motorToChange = input.substring(secondSpace + 1, thirdSpace);
       String amountToChangeString = input.substring(thirdSpace + 1, input.length());
       amountToChange = amountToChangeString.toInt();
 
-      sys_state = EXECUTE;
-
+      sys_state = EXECUTE_INSTRCT;
     }
 
-    else {
-
+    else 
+    {
       Serial.println("Sorry, invalid command");
       sys_state = REQ_INSTRCT;
-
     }
-
   }
 
-  else if (sys_state == EXECUTE) {
-
+  else if (sys_state == EXECUTE_INSTRCT) 
+  {
     Serial.print("Setting "); 
     Serial.print(armToChange); 
     Serial.print(" "); 
@@ -374,8 +405,8 @@ void loop()
     Serial.print(" to "); 
     Serial.println(amountToChange);
 
-    if (armToChange == "arm1") {
-
+    if (armToChange == "arm1") 
+    {
       if (motorToChange == "base")
         rotateBase(amountToChange, ARM1);
 
@@ -387,11 +418,10 @@ void loop()
 
       if (motorToChange == "claw")
         setClawSpacing(amountToChange, ARM1);
-
     }
 
-    else if (armToChange == "arm2") {
-
+    else if (armToChange == "arm2") 
+    {
       if (motorToChange == "base")
         rotateBase(amountToChange, ARM2);
 
@@ -410,13 +440,15 @@ void loop()
 
   }
 
-  else if (sys_state == ARM_1_LIMIT_INTRPT) {
+  else if (sys_state == ARM_1_LIMIT_INTRPT) 
+  {
     rotateBottom(90, ARM1);
     rotateTop(0, ARM1);
     sys_state = REQ_INSTRCT;
   }
 
-  else if (sys_state == ARM_2_LIMIT_INTRPT) {
+  else if (sys_state == ARM_2_LIMIT_INTRPT) 
+  {
     rotateBottom(90, ARM2);
     rotateTop(0, ARM2);
     sys_state = REQ_INSTRCT;

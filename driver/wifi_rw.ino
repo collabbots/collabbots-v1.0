@@ -1,0 +1,1 @@
+// wifi read/write: over TCP/IP on WLAN or even a ThingSpeak server.
