@@ -3,6 +3,23 @@
 
 #include <Adafruit_PWMServoDriver.h>
 
+/****************************
+  MODE OF OPERATION FOR ROBOT
+ ****************************/
+
+enum current_mode{
+  // In command line mode, enter the commands in the Serial monitor 
+  // to turn the arm to a specified position
+  COMMAND_LINE, 
+
+  // In manual mode, run the serial monitor on Mac/Ubuntu and hold
+  // the keys to turn the arm
+  MANUAL
+}; 
+
+current_mode currentMode = MANUAL; 
+
+
 /********************
    GLOBAL VARIABLES
  ********************/
