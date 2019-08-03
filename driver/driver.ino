@@ -73,6 +73,17 @@ void setup()
 void loop()
 {
 
+  /**********
+   MANUAL MODE 
+   In manual mode, run the serial monitor on Mac/Ubuntu and hold
+   the keys to turn the arm. 
+   A/D: rotate base 
+   W/S: rotate bottom
+   Q/E: rotate top 
+   Z/C: open/close claw
+   Note: lower case means controlling arm 1; CAPS LOCK means controlling arm 2
+   **********/
+
   if (currentMode == MANUAL){
   
     // read input
@@ -155,6 +166,14 @@ void loop()
     }
 
   }
+
+  /**********
+   COMMAND_LINE MODE 
+   In command line mode, enter the commands in the Serial monitor 
+   to turn the arm to a specified position.
+   Commands take the following form: 
+   set arm1/arm2 base/bottom/top/claw angle/spacing
+   **********/
 
   else if (currentMode == COMMAND_LINE){
     // read stringInput
