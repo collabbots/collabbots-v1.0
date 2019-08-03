@@ -1,6 +1,7 @@
 {
     "configurations": [
         {
+<<<<<<< HEAD
             "name": "Mac",
             "includePath": [
                 "/Users/kooreshakhbari/Library/Arduino15/packages/arduino/tools/**",
@@ -17,6 +18,41 @@
             "compilerPath": "/usr/local/bin/gcc-8",
             "cStandard": "c11",
             "cppStandard": "c++17"
+=======
+            "name": "Win32",
+            "includePath": [
+                "C:\\Program Files (x86)\\Arduino\\tools\\**",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**",
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\TDM-GCC-64\\bin\\gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64",
+            "forcedInclude": [
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
+            ]
+        },
+        {
+            "name": "configuration1",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\TDM-GCC-64\\bin\\gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+>>>>>>> b3100534339f49ecfe63f82eb9622f3778fb77c5
         }
     ],
     "version": 4

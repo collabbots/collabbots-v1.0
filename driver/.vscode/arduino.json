@@ -1,5 +1,10 @@
 {
+<<<<<<< HEAD
     "board": "arduino:samd:mkr1000",
     "sketch": "driver.ino",
     "port": "/dev/cu.usbmodem14201"
+=======
+    "board": "arduino:avr:mega",
+    "configuration": "cpu=atmega2560"
+>>>>>>> b3100534339f49ecfe63f82eb9622f3778fb77c5
 }
