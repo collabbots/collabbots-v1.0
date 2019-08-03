@@ -19,7 +19,7 @@ void arm2Interrupt()
 {
   sys_state = ARM_2_LIMIT_INTRPT;
 }
- 
+
 String input;
 String armToChange;
 String motorToChange;
@@ -74,46 +74,86 @@ void loop()
   // read input
   if (sys_state == REQ_INSTRCT)
   {
+    Serial.println("Enter command in form: set arm1/arm2 base/bottom/top/claw angle/spacing");
     sys_state = READ_INSTRCT;
   }
   else if (sys_state == READ_INSTRCT) 
   {
     if (Serial.available() > 0) 
     {
-      input = Serial.readString();
+      input = Serial.readStringUntil('\n');
       // go onto to next state
       sys_state = PARSE_INSTRCT;
     }
   }
   else if (sys_state == PARSE_INSTRCT) 
   {
-    sys_state = EXECUTE_INSTRCT;
+    // find location of spaces
+    int firstSpace = -1;
+    int secondSpace = -1;
+    int thirdSpace = -1;
+    for (int i = 0; i < input.length(); i++) {
+      if (input[i] == ' ' && firstSpace == -1)
+        firstSpace = i;
+      else if (input[i] == ' ' && secondSpace == -1)
+        secondSpace = i;
+      else if (input[i] == ' ' && thirdSpace == -1)
+        thirdSpace = i;
+    }
+
+    if (firstSpace != -1 && secondSpace != -1 && thirdSpace != -1) 
+    {
+      // break the string apart at the spaces
+      armToChange = input.substring(firstSpace + 1, secondSpace);
+      motorToChange = input.substring(secondSpace + 1, thirdSpace);
+      String amountToChangeString = input.substring(thirdSpace + 1, input.length());
+      amountToChange = amountToChangeString.toInt();
+
+      sys_state = EXECUTE_INSTRCT;
+    }
+    else 
+    {
+      Serial.println("Sorry, invalid command");
+      sys_state = REQ_INSTRCT;
+    }
   }
   else if (sys_state == EXECUTE_INSTRCT) 
   {
-    if (input == "A")
-      rotateBase(arm_2_base_angle + 1, ARM2);
+    Serial.print("Setting "); 
+    Serial.print(armToChange); 
+    Serial.print(" "); 
+    Serial.print(motorToChange); 
+    Serial.print(" to "); 
+    Serial.println(amountToChange);
 
-    else if (input == "D")
-      rotateBottom(arm_2_base_angle - 1, ARM2);
+    if (armToChange == "arm1")
+    {
+      if (motorToChange == "base")
+        rotateBase(amountToChange, ARM1);
 
-    else if (input == "W")
-      rotateBase(arm_2_bottom_angle + 1, ARM2); 
+      if (motorToChange == "bottom")
+        rotateBottom(amountToChange, ARM1);
 
-    else if (input == "S")
-      rotateBase(arm_2_bottom_angle - 1, ARM2); 
+      if (motorToChange == "top")
+        rotateTop(amountToChange, ARM1);
 
-    else if (input == "Q")
-      rotateTop(arm_2_top_angle + 1, ARM2); 
+      if (motorToChange == "claw")
+        setClawSpacing(amountToChange, ARM1);
+    }
+    else if (armToChange == "arm2") 
+    {
+      if (motorToChange == "base")
+        rotateBase(amountToChange, ARM2);
 
-    else if (input == "E")
-      rotateTop(arm_2_top_angle - 1, ARM2); 
+      if (motorToChange == "bottom")
+        rotateBottom(amountToChange, ARM2);
 
-    else if (input == "Z")
-      setClawSpacing(3, ARM2);
+      if (motorToChange == "top")
+        rotateTop(amountToChange, ARM2);
 
-    else if (input == "C")
-      setClawSpacing(1, ARM2);
+      if (motorToChange == "claw")
+        setClawSpacing(amountToChange, ARM2);
+    }
 
     sys_state = REQ_INSTRCT;
   }
