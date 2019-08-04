@@ -20,6 +20,16 @@ void arm2Interrupt()
   sys_state = ARM_2_LIMIT_INTRPT;
 }
 
+void changeToManual()
+{
+  currentMode = MANUAL;
+}
+
+void changeToCommandLine()
+{
+  currentMode = COMMAND_LINE;
+}
+
 int input;
 String stringInput; 
 String armToChange;
@@ -52,6 +62,10 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(arm_2_top_intrpt_1), arm2Interrupt, RISING);
   pinMode(arm_2_top_intrpt_2, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(arm_2_top_intrpt_2), arm2Interrupt, RISING);
+  pinMode(A1, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(A1), changeToManual, RISING);
+  pinMode(A2, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(A2), changeToCommandLine, RISING);
 
 
   // configure starting positions for the motors
@@ -179,7 +193,7 @@ void loop()
     // read stringInput
     if (sys_state == REQ_INSTRCT)
     {
-      Serial.println("Enter command in form: set arm1/arm2 base/bottom/top/claw angle/spacing");
+      Serial.println("Enter command in form: let arm1/arm2 base/bottom/top/claw angle/spacing");
       sys_state = READ_INSTRCT;
     }
     else if (sys_state == READ_INSTRCT) 
