@@ -163,6 +163,25 @@ void loop()
   
       else if (input == 'c')
         setClawSpacing(2, ARM1);
+
+      else if (input == '?'){
+        relaysOn = !relaysOn; 
+        if (relaysOn){
+          digitalWrite(2, HIGH);
+          digitalWrite(3, HIGH);
+        }
+        else{
+          digitalWrite(2, LOW);
+          digitalWrite(3, LOW);
+        }
+
+      }
+
+      else if (input == '~'){
+        currentMode = COMMAND_LINE;
+        sys_state = REQ_INSTRCT; 
+        return;  
+      }
   
       sys_state = REQ_INSTRCT;
     }
@@ -207,6 +226,11 @@ void loop()
     }
     else if (sys_state == PARSE_INSTRCT) 
     {
+      if (stringInput[0] == '~'){
+        currentMode = MANUAL; 
+        sys_state = REQ_INSTRCT;
+        return; 
+      }
       // find location of spaces
       int firstSpace = -1;
       int secondSpace = -1;

@@ -17,7 +17,7 @@ enum current_mode{
   MANUAL
 }; 
 
-current_mode currentMode = MANUAL; 
+current_mode currentMode = MANUAL;  
 
 
 /********************
@@ -88,5 +88,8 @@ int arm_2_top_angle = 0;
 
 // speed delay for motors (higher = slower)
 const int motor_speed_delay = 25;
+
+// controls whether relays are on or off
+bool relaysOn = true; 
 
 #endif

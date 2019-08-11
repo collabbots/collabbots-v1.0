@@ -144,7 +144,9 @@ class PS4Controller(object):
 
             # TOUCHPAD
             if (self.button_data[13] == True): 
-                pressKey('', arm)
+                keyboard.press('?')
+                keyboard.release('?')
+                time.sleep(1.5); 
 
             # LEFT JOYSTICK RIGHT 
             if (self.axis_data[0] > 0.9):
