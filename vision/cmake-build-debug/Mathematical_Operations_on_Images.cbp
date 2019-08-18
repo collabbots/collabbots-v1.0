@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Mathematical_Operations_on_Images"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\installation\;CMake Files\..\..\..\..\installation\OpenCV-4.1.0\;CMake Files\..\..\..\..\installation\OpenCV-4.1.0\lib\;CMake Files\..\..\..\..\installation\OpenCV-4.1.0\lib\cmake\;CMake Files\..\..\..\..\installation\OpenCV-4.1.0\lib\cmake\opencv4\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="VideoWrite">
+				<Option output="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/VideoWrite" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/kooreshakhbari/installation/OpenCV-4.1.0/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 VideoWrite"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="VideoWrite/fast">
+				<Option output="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/VideoWrite" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/kooreshakhbari/installation/OpenCV-4.1.0/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 VideoWrite/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="VideoRead">
+				<Option output="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/VideoRead" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/kooreshakhbari/installation/OpenCV-4.1.0/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 VideoRead"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="VideoRead/fast">
+				<Option output="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/VideoRead" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/kooreshakhbari/installation/OpenCV-4.1.0/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 VideoRead/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="using_the_mouse_for_annotation">
+				<Option output="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/using_the_mouse_for_annotation" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/kooreshakhbari/installation/OpenCV-4.1.0/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 using_the_mouse_for_annotation"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="using_the_mouse_for_annotation/fast">
+				<Option output="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/using_the_mouse_for_annotation" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/kooreshakhbari/installation/OpenCV-4.1.0/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 using_the_mouse_for_annotation/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="using_the_keyboard_as_input_device">
+				<Option output="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/using_the_keyboard_as_input_device" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/kooreshakhbari/installation/OpenCV-4.1.0/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 using_the_keyboard_as_input_device"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="using_the_keyboard_as_input_device/fast">
+				<Option output="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/using_the_keyboard_as_input_device" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/kooreshakhbari/installation/OpenCV-4.1.0/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 using_the_keyboard_as_input_device/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="adding_a_trackbar_as_controller">
+				<Option output="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/adding_a_trackbar_as_controller" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/kooreshakhbari/installation/OpenCV-4.1.0/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 adding_a_trackbar_as_controller"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="adding_a_trackbar_as_controller/fast">
+				<Option output="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/adding_a_trackbar_as_controller" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/kooreshakhbari/installation/OpenCV-4.1.0/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 adding_a_trackbar_as_controller/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/VideoRead.cpp">
+			<Option target="VideoRead"/>
+		</Unit>
+		<Unit filename="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/VideoWrite.cpp">
+			<Option target="VideoWrite"/>
+		</Unit>
+		<Unit filename="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/adding_a_trackbar_as_controller.cpp">
+			<Option target="adding_a_trackbar_as_controller"/>
+		</Unit>
+		<Unit filename="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/using_the_keyboard_as_input_device.cpp">
+			<Option target="using_the_keyboard_as_input_device"/>
+		</Unit>
+		<Unit filename="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/using_the_mouse_for_annotation.cpp">
+			<Option target="using_the_mouse_for_annotation"/>
+		</Unit>
+		<Unit filename="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/../../../../installation/OpenCV-4.1.0/lib/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\installation\OpenCV-4.1.0\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/../../../../installation/OpenCV-4.1.0/lib/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\installation\OpenCV-4.1.0\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/../../../../installation/OpenCV-4.1.0/lib/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\installation\OpenCV-4.1.0\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/Users/kooreshakhbari/Desktop/Projects/OpenCV/week2-cpp/../../../../installation/OpenCV-4.1.0/lib/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\installation\OpenCV-4.1.0\lib\cmake\opencv4\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
