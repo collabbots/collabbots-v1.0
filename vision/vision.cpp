@@ -54,7 +54,7 @@ void Vision::start_capture(const camera_code& camera)
             
             frame_width = top_view.get(cv::CAP_PROP_FRAME_WIDTH);
             frame_height = top_view.get(cv::CAP_PROP_FRAME_HEIGHT);
-            outavi_top_view = cv::VideoWriter("top_view.avi",cv::VideoWriter::fourcc('M','J','P','G'),10, cv::Size(frame_width,frame_height));
+            outavi_top_view = cv::VideoWriter("top_view.avi", cv::VideoWriter::fourcc('M','J','P','G'), 10, cv::Size(frame_width,frame_height));
             
             break;
 
@@ -74,20 +74,12 @@ void Vision::start_capture(const camera_code& camera)
 
             frame_width = side_view.get(cv::CAP_PROP_FRAME_WIDTH);
             frame_height = side_view.get(cv::CAP_PROP_FRAME_HEIGHT);
-            outavi_side_view = cv::VideoWriter("side_view.avi",cv::VideoWriter::fourcc('M','J','P','G'),10, cv::Size(frame_width,frame_height));
+            outavi_side_view = cv::VideoWriter("side_view.avi", cv::VideoWriter::fourcc('M','J','P','G'), 10, cv::Size(frame_width,frame_height));
             
             break;
         
         default:
-            try
-            {
-                throw std::runtime_error("Incorrect camera code entered");
-            }
-            catch(const std::exception& e)
-            {
-                std::cerr << e.what() << '\n';
-            }
-            
+            throw std::runtime_error("Incorrect camera code entered");
             break;
     }
 }
@@ -100,7 +92,7 @@ void Vision::end_capture(const camera_code& camera)
             top_view.release();
             outavi_top_view.release();    
             break;
-        
+
         case SIDE_VIEW:
             side_view.release();
             outavi_side_view.release();    
@@ -162,18 +154,16 @@ void Vision::display_all_channels(const camera_code& camera)
     display_channel(camera, color_code::GREEN); 
 }
 
+void Vision::display_channel(const camera_code& camera, const color_code& color) {
+    std::string colorName;
+    cv::Mat currentColourChannel;
 
-void Vision::display_channel(const camera_code& camera, const color_code& color)
-{
-    std::string colorName; 
-    cv::Mat currentColourChannel; 
-    
     if (color == RED)
-        colorName = "R" + std::string((camera == TOP_VIEW) ? "_TOP": "_SIDE");
+        colorName = "R" + std::string((camera == TOP_VIEW) ? "_TOP" : "_SIDE");
     else if (color == BLUE)
-        colorName = "B" + std::string((camera == TOP_VIEW) ? "_TOP": "_SIDE");
+        colorName = "B" + std::string((camera == TOP_VIEW) ? "_TOP" : "_SIDE");
     else if (color == GREEN)
-        colorName = "G" + std::string((camera == TOP_VIEW) ? "_TOP": "_SIDE");
+        colorName = "G" + std::string((camera == TOP_VIEW) ? "_TOP" : "_SIDE");
 
     currentColourChannel = return_channel(camera, color);
     cv::namedWindow(colorName, cv::WINDOW_NORMAL);
