@@ -18,5 +18,5 @@ MACRO(add_example name)
   TARGET_LINK_LIBRARIES(${name} ${OpenCV_LIBS} )
 ENDMACRO()
 
-ADD_EXECUTABLE(vision vision/vision.cpp)
-TARGET_LINK_LIBRARIES(vision ${OpenCV_LIBS})
+ADD_EXECUTABLE(collabbots-v1.0 collabbots-v1.0.cpp vision/vision.cpp vision/vision.h)
+TARGET_LINK_LIBRARIES(collabbots-v1.0 ${OpenCV_LIBS})
