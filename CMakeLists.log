@@ -1,0 +1,17 @@
+Questionable use of curly braces in "set(cmake_cxx_flags_release "${cmake_cxx_flags_release} /mt")"
+    Error: undefined symbol in: "[cmake_cxx_flags_release]"
+Questionable use of curly braces in "include_directories( ${opencv_include_dirs})"
+    Error: undefined symbol in: "[opencv_include_dirs]"
+Questionable use of curly braces in "add_executable(${name} ${name}.cpp)"
+    Error: undefined symbol in: "[name]"
+Questionable use of curly braces in "add_executable($(name) ${name}.cpp)"
+    Error: undefined symbol in: "[name]"
+Questionable use of curly braces in "target_link_libraries(${name} ${opencv_libs} )"
+    Error: undefined symbol in: "[name]"
+Questionable use of curly braces in "target_link_libraries($(name) ${opencv_libs} )"
+    Error: undefined symbol in: "[opencv_libs]"
+Questionable use of curly braces in "target_link_libraries(collabbots-v1.0 ${opencv_libs})"
+    Error: undefined symbol in: "[opencv_libs]"
+Circuit: cmake_minimum_required(VERSION 2.8.12)
+
+Fatal Error: Syntax error in coupled transmission line statement: "project(collabbots-v1.0)"
